@@ -1,8 +1,4 @@
-package modules;
-
-import modules.Cards;
-import modules.Deck;
-import modules.stack;
+package models;
 
 import org.junit.Test;
 
