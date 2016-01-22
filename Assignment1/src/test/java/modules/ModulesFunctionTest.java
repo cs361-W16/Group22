@@ -2,6 +2,8 @@ package modules;
 
 import modules.Cards;
 import modules.Deck;
+import modules.stack;
+
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -32,7 +34,7 @@ public class ModulesFunctionTest
     }
 
     @Test
-    public void testDeckShuffleCorrect()
+ public void testDeckShuffleCorrect()
     {
         Deck deck = new Deck();
         deck.shuffleDeck();
@@ -43,4 +45,17 @@ public class ModulesFunctionTest
         }
 
     }
+    public void testStackpopCorrect(){
+        stack stack=new stack();
+        Cards card=new Cards(0,"2","Hearts");
+        Cards card1=new Cards(0,"1","Hearts");
+        stack.stack[0][0]=card;
+        stack.stack[1][0]=card1;
+        System.out.print(stack.stack[0][0].getRank() + " " + stack.stack[0][0].getSuit()+ "\n");
+        System.out.print(stack.stack[1][0].getRank() + " " + stack.stack[1][0].getSuit()+ "\n");
+        stack.popCard(0);
+        System.out.print(stack.stack[0][0].getRank() + " " + stack.stack[0][0].getSuit()+ "\n");
+        System.out.print(stack.stack[1][0].getRank() + " " + stack.stack[1][0].getSuit()+ "\n");
+    }
+
 }
