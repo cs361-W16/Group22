@@ -1,8 +1,8 @@
-package modules;
+package models;
 
 import java.util.ArrayList;
-import modules.Cards;
-import modules.Deck;
+import models.Cards;
+import models.Deck;
 /**
  * Created by Yizheng on 1/21/2016.
  */
@@ -32,9 +32,9 @@ public class stack {
         popCard(n);
     }
 
-    public void pushCard() {
+   // public void pushCard() {
 
-    }
+  //  }
 
     public void popCard(int n) {
         int i;
