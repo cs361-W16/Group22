@@ -1,8 +1,11 @@
 package models;
 
+<<<<<<< HEAD:Assignment1/src/main/java/models/stack.java
 import java.util.ArrayList;
 import models.Cards;
 import models.Deck;
+=======
+>>>>>>> dd7f70341dc5a8f53b60f99087290578045cec12:Assignment1/src/main/java/models/stack.java
 /**
  * Created by Yizheng on 1/21/2016.
  */
@@ -32,9 +35,28 @@ public class stack {
         popCard(n);
     }
 
+<<<<<<< HEAD:Assignment1/src/main/java/models/stack.java
    // public void pushCard() {
 
   //  }
+=======
+    public void pushCard(Cards card,int n) {
+        int i;
+        for (i=0;i<13;i++){
+            if (stack[i][n].getRank() == null ){
+                break;
+            }
+        }
+        for (int j=i;j>0;j--){
+            stack[j][n]=stack[j-1][n];
+        }
+        stack[0][n]=card;
+    }
+
+    public Cards top(int n){
+        return stack[0][n];
+    }
+>>>>>>> dd7f70341dc5a8f53b60f99087290578045cec12:Assignment1/src/main/java/models/stack.java
 
     public void popCard(int n) {
         int i;
