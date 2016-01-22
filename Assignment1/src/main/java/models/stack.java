@@ -1,8 +1,5 @@
-package modules;
+package models;
 
-import java.util.ArrayList;
-import modules.Cards;
-import modules.Deck;
 /**
  * Created by Yizheng on 1/21/2016.
  */

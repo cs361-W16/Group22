@@ -1,7 +1,4 @@
-package modules;
-
-import java.util.ArrayList;
-import modules.Cards;
+package models;
 
 /**
  * Created by krisna on 1/21/2016.
