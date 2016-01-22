@@ -1,8 +1,11 @@
-package modules;
+package models;
+
 
 import java.util.ArrayList;
-import modules.Cards;
-import modules.Deck;
+import models.Cards;
+import models.Deck;
+
+
 /**
  * Created by Yizheng on 1/21/2016.
  */
@@ -32,19 +35,46 @@ public class stack {
         popCard(n);
     }
 
-    public void pushCard() {
 
-    }
+   // public void pushCard() {
 
-    public void popCard(int n) {
+  //  }
+
+    public void pushCard(Cards card,int n)
+    {
         int i;
-        Cards card=new Cards(0,null,null);
-        for (i=0;i<12;i++){
-            if (stack[i][n].getRank()==null){
+        for (i=0;i<13;i++){
+            if (stack[i][n].getRank() == null )
+            {
                 break;
             }
         }
-        for (int j=0;j<i;j++){
+        for (int j=i;j>0;j--)
+        {
+            stack[j][n]=stack[j-1][n];
+        }
+        stack[0][n]=card;
+    }
+
+    public Cards top(int n)
+    {
+        return stack[0][n];
+    }
+
+
+    public void popCard(int n)
+    {
+        int i;
+        Cards card=new Cards(0,null,null);
+        for (i=0;i<12;i++)
+        {
+            if (stack[i][n].getRank()==null)
+            {
+                break;
+            }
+        }
+        for (int j=0;j<i;j++)
+        {
             stack[j][n]=stack[j+1][n];
         }
         stack[i][n]=card;
