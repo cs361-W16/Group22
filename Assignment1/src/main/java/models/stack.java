@@ -29,8 +29,21 @@ public class stack {
         popCard(n);
     }
 
-    public void pushCard() {
+    public void pushCard(Cards card,int n) {
+        int i;
+        for (i=0;i<13;i++){
+            if (stack[i][n].getRank() == null ){
+                break;
+            }
+        }
+        for (int j=i;j>0;j--){
+            stack[j][n]=stack[j-1][n];
+        }
+        stack[0][n]=card;
+    }
 
+    public Cards top(int n){
+        return stack[0][n];
     }
 
     public void popCard(int n) {
