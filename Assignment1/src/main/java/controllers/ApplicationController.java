@@ -23,13 +23,16 @@ import com.google.inject.Singleton;
 
 
 @Singleton
-public class ApplicationController {
+public class ApplicationController
+{
 
-    public Result index() {
+    public Result index()
+    {
         return Results.html();
     }
 
-    public Result acesUp() {
+    public Result acesUp()
+    {
         return Results.html().template("views/AcesUp/AcesUp.flt.html");
     }
 
