@@ -43,7 +43,11 @@ public class stack {
     }
 
     public Cards top(int n){
-        return stack[0][n];
+        for (int i=0;i<12;i++) {
+            if (stack[i+1][n].getRank()==null)
+            return stack[i][n];
+        }
+        return stack[12][n];
     }
 
     public void popCard(int n) {
