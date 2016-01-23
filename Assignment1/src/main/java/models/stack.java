@@ -83,14 +83,14 @@ public class Stack
     }
     //n is column number
     //if suit is same and large value, return 1
-    public int checkRemove(Cards card, int n){
+    public int checkRemove(int n){
 
         for(int i=0;i<3;i++){
             if(i == n) {
                 i++;
                 //return 0;
             }
-            else if(stack[0][i].getValue() > card.getValue() && (stack[0][i].getSuit().equals(card.getSuit()))){
+            else if(stack[0][i].getValue() > stack[0][n].getValue() && (stack[0][i].getSuit().equals(stack[0][n].getSuit()))){
                 return 1;
 
             }
@@ -100,8 +100,8 @@ public class Stack
         return n;
     }
 
-    public void removeTop(Cards card,int n){
-        int r = checkRemove(card, n);
+    public void removeTop(Stack cards,int n){
+        int r = checkRemove( n);
         if(r == 1){
             popCard(n);
         }
