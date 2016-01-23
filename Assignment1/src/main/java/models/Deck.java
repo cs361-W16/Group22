@@ -66,4 +66,12 @@ public class Deck
         }
         return dealedCard;
     }
+
+    public void removeCard() {
+        for(int i = 0; i < 4; i++){
+
+
+        }
+
+    }
 }
