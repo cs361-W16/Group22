@@ -174,5 +174,32 @@ public void remove(int n){
         }
         stack[i][n]=card;
     }
+    //n is column number
+    //if suit is same and large value, return 1
+    public int checkRemove(Cards card, int n){
+
+        for(int i=0;i<3;i++){
+            if(i == n) {
+                i++;
+                //return 0;
+            }
+            else if(stack[0][i].getValue() > card.getValue() && (stack[0][i].getSuit().equals(card.getSuit()))){
+                return 1;
+
+            }
+            else
+                return 0;
+        }
+        return n;
+    }
+
+    public void removeTop(Cards card,int n){
+        int r = checkRemove(card, n);
+        if(r == 1){
+            popCard(n);
+        }
+        else
+           return;
+    }
 }
 
