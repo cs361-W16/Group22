@@ -16,6 +16,7 @@
 
 package controllers;
 
+import models.Stack;
 import ninja.Result;
 import ninja.Results;
 
@@ -25,15 +26,29 @@ import com.google.inject.Singleton;
 @Singleton
 public class ApplicationController
 {
+    public Stack testBoard = new Stack();
 
-    public Result index()
-    {
+    public Result index() {
         return Results.html();
     }
 
-    public Result acesUp()
-    {
-        return Results.html().template("views/AcesUp/AcesUp.flt.html");
+    public Result acesUp() {
+        Result result =  Results.html().template("views/AcesUp/AcesUp.flt.html");
+        return result;
     }
 
+    public Result getState()
+    {
+        testBoard = new Stack();
+        testBoard.cardToString();
+        return Results.json().render(testBoard);
+    }
+
+
+    public Result deal()
+    {
+        testBoard.dealFour();
+        testBoard.cardToString();
+        return Results.json().render(testBoard);
+    }
 }
