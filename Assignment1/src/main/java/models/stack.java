@@ -14,6 +14,99 @@ public class stack {
             }
         }
     }
+    public void remove(int n){
+        int count,rm;
+        count = 1;
+        rm=0;
+        Cards card;
+        card = stack[0][n];
+        for (int i=0; i< 4; i++)
+        if (stack[0][n].getSuit() == stack[0][i].getSuit() && n!=i){
+            count++;
+            if (compare(card, stack[0][i])==0){
+                card = stack[0][i];
+            }
+        }
+        if (count > 1){
+            rm = 1;
+        }
+        for (int j=0;j<4;j++){
+            if (count == 1){
+                break;
+            }
+            if (stack[0][j].getRank() != card.getRank() && stack[0][j].getSuit() == card.getSuit()){
+                popCard(j);
+                count--;
+            }
+        }
+        if (rm == 0){
+            moveD(n);
+        }
+    }
+    public int compare(Cards a, Cards b){
+        if (a.getRank()=="ACE") {
+            return 1;
+        }
+        int p=0,n=0;
+        if (a.getRank() == "2"){
+            p=2;
+        }else if (a.getRank() == "3"){
+            p=3;
+        }else if (a.getRank() == "4"){
+            p=4;
+        }else if (a.getRank() == "5"){
+            p=5;
+        }else if (a.getRank() == "6"){
+            p=6;
+        }else if (a.getRank() == "7"){
+            p=7;
+        }else if (a.getRank() == "8"){
+            p=8;
+        }else if (a.getRank() == "9"){
+            p=9;
+        }else if (a.getRank() == "10"){
+            p=10;
+        }else if (a.getRank() == "Jack"){
+            p=11;
+        }else if (a.getRank() == "Queen"){
+            p=12;
+        }else if (a.getRank() == "King"){
+            p=13;
+        }else if (a.getRank() == "ACE"){
+            p=14;
+        }
+        if (b.getRank() == "2"){
+            n=2;
+        }else if (b.getRank() == "3"){
+            n=3;
+        }else if (b.getRank() == "4"){
+            n=4;
+        }else if (b.getRank() == "5"){
+            n=5;
+        }else if (b.getRank() == "6"){
+            n=6;
+        }else if (b.getRank() == "7"){
+            n=7;
+        }else if (b.getRank() == "8"){
+            n=8;
+        }else if (b.getRank() == "9"){
+            n=9;
+        }else if (b.getRank() == "10"){
+            n=10;
+        }else if (b.getRank() == "Jack"){
+            n=11;
+        }else if (b.getRank() == "Queen"){
+            n=12;
+        }else if (b.getRank() == "King"){
+            n=13;
+        }else if (b.getRank() == "ACE"){
+            n=14;
+        }
+        if (n>p) {
+            return 0;
+        }
+        return 1;
+    }
     public void moveD(int n) {
         if (stack[0][n].getRank() != null) {
             for (int i = 0; i < 4; i++) {

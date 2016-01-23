@@ -94,6 +94,24 @@ public class ModulesFunctionTest
         System.out.print(stack.stack[0][0].getRank() + " " + stack.stack[0][0].getSuit() + "\n");
         System.out.print(stack.stack[0][1].getRank() + " " + stack.stack[0][1].getSuit() + "\n");
     }
+    @Test
+    public void testRemoveCorrect() {
+        stack stack = new stack();
+        Cards card = new Cards(0, "2", "Hearts");
+        Cards card1 = new Cards(0, "ACE", "Hearts");
+        stack.stack[0][0] = card;
+        stack.stack[0][1] = card1;
+        System.out.print("Move Test:\n\n");
+
+        System.out.print(stack.stack[0][0].getRank() + " " + stack.stack[0][0].getSuit() + "\n");
+        System.out.print(stack.stack[0][1].getRank() + " " + stack.stack[0][1].getSuit() + "\n");
+        stack.remove(0);
+        System.out.print(stack.stack[0][0].getRank() + " " + stack.stack[0][0].getSuit() + "\n");
+        System.out.print(stack.stack[0][1].getRank() + " " + stack.stack[0][1].getSuit() + "\n");
+        stack.remove(1);
+        System.out.print(stack.stack[0][0].getRank() + " " + stack.stack[0][0].getSuit() + "\n");
+        System.out.print(stack.stack[0][1].getRank() + " " + stack.stack[0][1].getSuit() + "\n");
+    }
 
 
 }
