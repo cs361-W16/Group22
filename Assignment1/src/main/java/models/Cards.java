@@ -27,4 +27,9 @@ public class Cards
     {
         return this.suit;
     }
+    public String printCard()
+    {
+        System.out.printf("%s of %s\n", rank, suit);
+        return rank + " of " + suit;
+    }
 }

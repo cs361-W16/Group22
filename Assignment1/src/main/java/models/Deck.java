@@ -56,22 +56,4 @@ public class Deck
         }
     }
 
-    public Cards[] dealCards(Deck deck)
-    {
-        Cards[] dealedCard = new Cards[4];
-        for (int i = 0; i < 4; i++)
-        {
-            Cards card = deck.drawACard();
-            dealedCard[i] = card;
-        }
-        return dealedCard;
-    }
-
-    public void removeCard() {
-        for(int i = 0; i < 4; i++){
-
-
-        }
-
-    }
 }
