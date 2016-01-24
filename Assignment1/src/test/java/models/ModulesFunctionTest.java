@@ -98,20 +98,20 @@ public class ModulesFunctionTest
     }
 @Test
     public void testPushcardCorrect() {
-        stack stack = new stack();
+        Stack Stack = new Stack();
         Cards card = new Cards(0, "2", "Hearts");
         Cards card1 = new Cards(0, "1", "Hearts");
-        stack.stack[0][0] = card;
+        Stack.stack[0][0] = card;
         System.out.print("Push Test:\n\n");
-        System.out.print(stack.stack[0][0].getRank() + " " + stack.stack[0][0].getSuit() + "\n");
-        System.out.print(stack.stack[1][0].getRank() + " " + stack.stack[1][0].getSuit() + "\n");
-        stack.pushCard(card1, 0);
-        System.out.print(stack.stack[0][0].getRank() + " " + stack.stack[0][0].getSuit() + "\n");
-        System.out.print(stack.stack[1][0].getRank() + " " + stack.stack[1][0].getSuit() + "\n");
+        System.out.print(Stack.stack[0][0].getRank() + " " + Stack.stack[0][0].getSuit() + "\n");
+        System.out.print(Stack.stack[1][0].getRank() + " " + Stack.stack[1][0].getSuit() + "\n");
+        Stack.pushCard(card1,0, 0);
+        System.out.print(Stack.stack[0][0].getRank() + " " + Stack.stack[0][0].getSuit() + "\n");
+        System.out.print(Stack.stack[1][0].getRank() + " " + Stack.stack[1][0].getSuit() + "\n");
     }
     @Test
     public void testMoveCorrect() {
-        stack stack = new stack();
+        Stack stack = new Stack();
         Cards card = new Cards(0, "2", "Hearts");
         Cards card1 = new Cards(0, "1", "Hearts");
         stack.stack[0][0] = card;
@@ -125,7 +125,7 @@ public class ModulesFunctionTest
     }
     @Test
     public void testRemoveCorrect() {
-        stack stack = new stack();
+        Stack stack = new Stack();
         Cards card = new Cards(0, "2", "Hearts");
         Cards card1 = new Cards(0, "ACE", "Hearts");
         stack.stack[0][0] = card;
@@ -141,6 +141,39 @@ public class ModulesFunctionTest
         System.out.print(stack.stack[0][0].getRank() + " " + stack.stack[0][0].getSuit() + "\n");
         System.out.print(stack.stack[0][1].getRank() + " " + stack.stack[0][1].getSuit() + "\n");
     }
+
+    @Test
+    public void testEnd(){
+        Deck deck = new Deck();
+        deck.N=0;
+        deck.shuffleDeck();
+        Stack stack = new Stack();
+        stack.stack[0][0] = new Cards(12,"Ace","poo");
+        stack.stack[0][1] = new Cards(12,"Ace","poo");
+        stack.stack[0][2] = new Cards(12,"Ace","poo");
+        stack.stack[0][3] = new Cards(12,"Ace","poo");
+        System.out.println(stack.checkwin(deck,stack));
+        assertEquals(1,stack.checkwin(deck,stack));
+    }
+
+    @Test
+    public void testLose(){
+        Deck deck = new Deck();
+        deck.N=0;
+        deck.shuffleDeck();
+        Stack stack = new Stack();
+        stack.stack[0][0] = new Cards(12,"ace","poo");
+        System.out.println(stack.checkwin(deck,stack));
+        assertEquals(0,stack.checkwin(deck,stack));
+
+    }
+    @Test
+    public void  ret(){
+    Deck another = new Deck();
+    another.shuffleDeck();
+        Stack stack = new Stack();
+    assertEquals(0,stack.checkwin(another,stack));
+}
 
 
 }

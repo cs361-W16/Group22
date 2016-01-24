@@ -30,7 +30,7 @@ public class Stack
         currentDeck.shuffleDeck();
         c0 = -1; c1 = -1; c2 = -1; c3 = -1;
     }
-<<<<<<< HEAD
+//<<<<<<< HEAD
     public void cardToString()
     {
         for (int i = 0; i < 13; i++)
@@ -79,7 +79,7 @@ public class Stack
 
     }
 
-=======
+//=======
 public void remove(int n){
         int count,rm;
         count = 1;
@@ -173,7 +173,7 @@ public void remove(int n){
         }
         return 1;
     }
->>>>>>> refs/remotes/origin/master
+//>>>>>>> refs/remotes/origin/master
     public void moveD(int n)
     {
         if (stack[0][n].getRank() != null)
@@ -224,6 +224,7 @@ public void remove(int n){
     }
     //n is column number
     //if suit is same and large value, return 1
+    /*
     public int checkRemove(int n){
 
         for(int i=0;i<3;i++){
@@ -240,7 +241,8 @@ public void remove(int n){
         }
         return n;
     }
-
+    */
+/*
     public void removeTop(Stack cards,int n){
         int r = checkRemove( n);
         if(r == 1){
@@ -248,6 +250,27 @@ public void remove(int n){
         }
         else
            return;
+    }
+*/
+
+    public int checkwin(Deck current, Stack card) {
+        //   int n = current.getCardsLeft();
+        int retVal=0;
+        if (current.N == 0) {
+            if (card.top(0,0).getRank() == "Ace" && card.top(0,1).getRank() == "Ace"
+                    && card.top(0,2).getRank() == "Ace" && card.top(0,2).getRank() == "Ace"
+                    && card.top(0,3).getRank() == "Ace"){
+                System.out.println("win");
+                retVal = 1;
+            } else {
+                System.out.println("You Lose");
+                retVal = 0;
+            }
+            return retVal;
+        }
+        else{
+         return 0;}
+
     }
 }
 
