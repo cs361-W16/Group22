@@ -42,6 +42,7 @@ public class ModulesFunctionTest
         }
 
     }
+
     @Test
     public void testPrintMethod()
     {
@@ -141,7 +142,6 @@ public class ModulesFunctionTest
         System.out.print(stack.stack[0][1].getRank() + " " + stack.stack[0][1].getSuit() + "\n");
     }
 
-
     @Test
     public void testEnd(){
         Deck deck = new Deck();
@@ -176,4 +176,72 @@ public class ModulesFunctionTest
 }
 
 
+    @Test
+    public void testCompares(){
+        Stack stack = new Stack();
+        Cards card = new Cards(0, "3", "Hearts");
+        Cards card1 = new Cards(0, "2", "Hearts");
+        stack.stack[0][0] = card;
+        stack.stack[0][1] = card1;
+        System.out.println(stack.compare(card,card1));
+        card = new Cards(0, "4", "Hearts");
+        card1 = new Cards(0, "3", "Hearts");
+        stack.stack[0][0] = card;
+        stack.stack[0][1] = card1;
+        System.out.println(stack.compare(card,card1));
+        card = new Cards(0, "5", "Hearts");
+        card1 = new Cards(0, "4", "Hearts");
+        stack.stack[0][0] = card;
+        stack.stack[0][1] = card1;
+        System.out.println(stack.compare(card,card1));
+        card = new Cards(0, "6", "Hearts");
+        card1 = new Cards(0, "5", "Hearts");
+        stack.stack[0][0] = card;
+        stack.stack[0][1] = card1;
+        System.out.println(stack.compare(card,card1));
+        card = new Cards(0, "7", "Hearts");
+        card1 = new Cards(0, "6", "Hearts");
+        stack.stack[0][0] = card;
+        stack.stack[0][1] = card1;
+        System.out.println(stack.compare(card,card1));
+        card = new Cards(0, "8", "Hearts");
+        card1 = new Cards(0, "7", "Hearts");
+        stack.stack[0][0] = card;
+        stack.stack[0][1] = card1;
+        System.out.println(stack.compare(card,card1));
+        card = new Cards(0, "9", "Hearts");
+        card1 = new Cards(0, "8", "Hearts");
+        stack.stack[0][0] = card;
+        stack.stack[0][1] = card1;
+        System.out.println(stack.compare(card,card1));
+        card = new Cards(0, "10", "Hearts");
+        card1 = new Cards(0, "9", "Hearts");
+        stack.stack[0][0] = card;
+        stack.stack[0][1] = card1;
+        System.out.println(stack.compare(card,card1));
+        card = new Cards(0, "Jack", "Hearts");
+        card1 = new Cards(0, "10", "Hearts");
+        stack.stack[0][0] = card;
+        stack.stack[0][1] = card1;
+        System.out.println(stack.compare(card,card1));
+        card = new Cards(0, "Queen", "Hearts");
+        card1 = new Cards(0, "Jack", "Hearts");
+        stack.stack[0][0] = card;
+        stack.stack[0][1] = card1;
+        System.out.println(stack.compare(card,card1));
+        card = new Cards(0, "King", "Hearts");
+        card1 = new Cards(0, "Queen", "Hearts");
+        stack.stack[0][0] = card;
+        stack.stack[0][1] = card1;
+        System.out.println(stack.compare(card,card1));
+        card = new Cards(0, "ACE", "Hearts");
+        card1 = new Cards(0, "King", "Hearts");
+        stack.stack[0][0] = card;
+        stack.stack[0][1] = card1;
+        System.out.println(stack.compare(card,card1));
+        card1 = new Cards(0, "ACE", "Hearts");
+        stack.stack[0][1] = card1;
+        System.out.println(stack.compare(card,card1));
+
+    }
 }
