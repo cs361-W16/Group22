@@ -18,7 +18,7 @@ package controllers;
 
 
 import org.junit.Test;
-
+import models.Stack;
 import ninja.NinjaDocTester;
 import org.doctester.testbrowser.Request;
 import org.doctester.testbrowser.Response;
@@ -27,10 +27,11 @@ import static org.hamcrest.CoreMatchers.containsString;
 import static org.junit.Assert.assertThat;
 
 public class ApiControllerDocTesterTest extends NinjaDocTester {
-    
+
     String URL_INDEX = "/";
     String URL_ACES_UP = "/AcesUp";
-    
+    String URL_STATE = "/AcesUp/state.json";
+    String URL_DEAL = "/AcesUp/deal.json";
     @Test
     public void testGetIndex() {
 
@@ -60,6 +61,33 @@ public class ApiControllerDocTesterTest extends NinjaDocTester {
 
         assertThat(response.payload, containsString("of"));
 
+    }
+    @Test
+    public void testDealCard()
+    {
+        // Arrange
+        Stack gamestate = new Stack();
+        gamestate.dealFour();
+
+        Response response = makeRequest(
+                Request.GET().url(
+                        testServerUrl().path(URL_DEAL)));
+
+        assertThat(response.payload, containsString("of"));
+    }
+
+    @Test
+    public void testStateCard()
+    {
+        // Arrange
+        Stack gamestate = new Stack();
+        gamestate.dealFour();
+
+        Response response = makeRequest(
+                Request.GET().url(
+                        testServerUrl().path(URL_STATE)));
+
+        assertThat(response.payload, containsString("of"));
     }
 
 }
