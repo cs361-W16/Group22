@@ -51,5 +51,15 @@ public class ApiControllerDocTesterTest extends NinjaDocTester {
         assertThat(response.payload, containsString("Aces Up"));
         assertThat(response.payload, containsString("columnOfCards"));
     }
+    @Test
+    public void testDealt() {
+
+        Response response = makeRequest(
+                Request.GET().url(
+                        testServerUrl().path(URL_ACES_UP)));
+
+        assertThat(response.payload, containsString("of"));
+
+    }
 
 }
