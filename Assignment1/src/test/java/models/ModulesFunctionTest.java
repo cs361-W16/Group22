@@ -42,7 +42,6 @@ public class ModulesFunctionTest
         }
 
     }
-
     @Test
     public void testPrintMethod()
     {
@@ -142,7 +141,7 @@ public class ModulesFunctionTest
         System.out.print(stack.stack[0][1].getRank() + " " + stack.stack[0][1].getSuit() + "\n");
     }
 
-    
+
     @Test
     public void testEnd(){
         Deck deck = new Deck();

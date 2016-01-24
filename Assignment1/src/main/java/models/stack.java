@@ -252,8 +252,7 @@ public void remove(int n){
            return;
     }
 */
-
-
+    
 
     public int checkwin(Deck current, Stack card) {
         //   int n = current.getCardsLeft();
